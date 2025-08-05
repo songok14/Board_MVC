@@ -31,6 +31,11 @@ public class AuthorController {
         return "redirect:/";
     }
 
+    @GetMapping("/login")
+    public String createLogin(){
+        return "author/author_login";
+    }
+
     @GetMapping("/list")
     public String findByAll(Model model){
         List<AuthorListDto> authorListDtoList = authorService.findAll();
@@ -50,7 +55,7 @@ public class AuthorController {
         authorService.updatePassword(authorUpdatePwDto);
     }
 
-    @DeleteMapping("/de/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id) {
         authorService.delete(id);
     }

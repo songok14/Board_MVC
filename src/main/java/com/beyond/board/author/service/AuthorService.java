@@ -68,7 +68,7 @@ public class AuthorService {
         authorRepository.delete(author);
     }
 
-    public Author login(AuthorLoginDto authorLoginDto){
+    public Author doLogin(AuthorLoginDto authorLoginDto){
         Optional<Author> optionalAuthor = authorRepository.findByEmail(authorLoginDto.getEmail());
         boolean check= true;
         if(!optionalAuthor.isPresent()){

@@ -18,7 +18,7 @@ import java.util.List;
 public class PostScheduler {
 
     private final PostRepository postRepository;
-    @Scheduled(cron = "0 0/1 * * * *")
+    @Scheduled(cron = "0 0/10 * * * *")
     public void postScheduler() {
         log.info("===== 예약 스케쥴러 시작 ======");
         List<Post> posts =postRepository.findByAppointment("Y");
